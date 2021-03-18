@@ -1,7 +1,11 @@
 <?php
   $numeros = $_POST;
-  function soma($numeros){
-    echo "Resultado: ".array_sum($numeros);
+  function soma(array $numeros){
+    $soma = 0;
+    foreach($numeros as $num){
+      $soma += $num;
+    }
+    return $soma;
   }
 ?>
 <!DOCTYPE html>

@@ -1,13 +1,4 @@
 <?php
-/*Crie um formulário onde o usuário informa seu nome e escolhe em uma lista a cidade onde
-mora.
-As cidades devem ser carregadas pelo backend.
-As cidades são: Jandira, Itapevi, Barueri, Osasco, Cotia, Santana de Parnaíba, Carapicuíba e São
-Paulo. Utilizar um índice para cada cidade iniciando em 1.
-Ao enviar o formulário o sistema deve informar o seguinte:
-Nota: Você deve enviar no value da <option> o índice de cada cidade.
-Dica: Você pode repetir o vetor na página que processa o formulário.
-Olá {Fulano}, de {Jandira}, seja bem-vindo.*/
 if(isset($_POST['nome'])){ 
   $nome = $_POST['nome'];
 }
@@ -38,11 +29,9 @@ $cidade = [
     <label for="nome">Nome:</label>
     <input type="text" name="nome" id="nome">
     <select name="cidades">
-      <option value="">SELECIONE</option>
+      <option value="">SELECIONE UMA CIDADE</option>
       <?php
         foreach($cidade as $chave => $city){
-
-        
       ?>
         <option value="<?=$chave?>"><?=$city?></option>
       <?php

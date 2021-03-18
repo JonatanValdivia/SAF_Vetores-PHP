@@ -8,42 +8,23 @@
   <title>Document</title>
 </head>
 <body>
- <pre>
+ <pre style="font-size: 2em;">
  <?php
  
    $vetorDeInteiros = [1, 54, 63, 81, 32, 36];
-  function deletarIndice(array $vetorDeInteiros, $numero){
+   print_r($vetorDeInteiros);
+  function deletarIndice(array $vetorDeInteiros, $elemento){
     if(isset($_POST['numero'])){
         $numero = $_POST['numero'];
-      if($numero == $vetorDeInteiros[0]){
-        unset($vetorDeInteiros[0]);
-        print_r($vetorDeInteiros);
-      }elseif($numero == $vetorDeInteiros[1]){
-        unset($vetorDeInteiros[1]);
-        print_r($vetorDeInteiros);
-      }elseif($numero == $vetorDeInteiros[2]){
-        unset($vetorDeInteiros[2]);
-        print_r($vetorDeInteiros);
-      }elseif($numero == $vetorDeInteiros[3]){
-        unset($vetorDeInteiros[3]);
-        print_r($vetorDeInteiros);
-      }elseif($numero == $vetorDeInteiros[4]){
-        unset($vetorDeInteiros[4]);
-        print_r($vetorDeInteiros);
-      } elseif($numero == $vetorDeInteiros[5]){
-        unset($vetorDeInteiros[5]);
-        print_r($vetorDeInteiros);
-      } else{
-        echo '<font color=red>False: </font>';
-        print_r($vetorDeInteiros);
+      foreach($vetorDeInteiros as $chave => $el){
+        if($el == $elemento){
+          unset($vetorDeInteiros[$chave]);
+          return $vetorDeInteiros;
+        }
       }
     }
+    return false;
   }
-  if(isset($_POST['numero'])){
-    $numero = $_POST['numero'];
-    deletarIndice($vetorDeInteiros, $numero);
-   }
-  
 ?>
  </pre>
  
@@ -52,5 +33,14 @@
   <input type='number' min='1' id='numero' name='numero'>
   <button>Deletar</button>
  </form>
+ <pre style="font-size: 2em;">
+  <?php
+    if(isset($_POST['numero'])){
+      $numero = $_POST['numero'];
+       $delete = deletarIndice($vetorDeInteiros, $numero);
+       print_r($delete);
+     }
+  ?>
+ </pre>
 </body>
 </html>

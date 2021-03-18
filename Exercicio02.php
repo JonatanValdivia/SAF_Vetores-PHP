@@ -3,27 +3,16 @@
 $vetorNomes = ["José", "Pedro", "Maria", "Carlos", "Isaac", "Jadson", "Jonatan"];
 
 if(isset($_POST['nome'])){
-  $nome = $_POST['nome'];
+  $nomeInserido = $_POST['nome'];
 }
 
-  function doisParametros($vetorNomes, $nome){
-    if($vetorNomes[0] == $nome){
-      echo "Verdadeiro";
-    } elseif($vetorNomes[1] == $nome){
-      echo "Verdadeiro";
-    }elseif($vetorNomes[2] == $nome){
-      echo "Verdadeiro";
-    }elseif($vetorNomes[3] == $nome){
-      echo "Verdadeiro";
-    }elseif($vetorNomes[4] == $nome){
-      echo "Verdadeiro";
-    }elseif($vetorNomes[5] == $nome){
-      echo "Verdadeiro";
-    }elseif($vetorNomes[6] == $nome){
-      echo "Verdadeiro";
-    }else{
-      echo "Falso";
+  function doisParametros($vetorNomes, $nomeEspecifico){
+    foreach($vetorNomes as $nome){
+      if($nome == $nomeEspecifico){
+        return True;
+      }
     }
+    return False;
   }
 ?>
 <!DOCTYPE html>
@@ -49,7 +38,7 @@ if(isset($_POST['nome'])){
     <h1>
       <?php
       if(isset($_POST['nome'])){
-        doisParametros($vetorNomes, $nome);
+        echo doisParametros($vetorNomes, $nomeInserido)? "Nome encontrado.": "Nome não encontrado.";
       }
       ?>
     </h1>

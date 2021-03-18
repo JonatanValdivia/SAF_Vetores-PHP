@@ -1,9 +1,11 @@
 <?php
-  $vetorInteiros = ["In", "te", "li", "gên", "ci", "a"];
-  function inverter($vetorInteiros){
-    for ($i=6; $i >= 0; $i--) {
-      echo "<font color= 'red'><h1>".$vetorInteiros[$i]. "</h1></font>";
+  $vetorDeStrings = ["In", "te", "li", "gên", "ci", "a"];
+  function inverter(array $vetor){
+    $vetorInvertido = [];
+    for ($i= (count($vetor) -1); $i >= 0; $i--) {
+      echo "<font color= 'red'><h1>".$vetorInvertido[] = $vetor[$i]. "</h1></font>";
   }
+  return $vetorInvertido;
   }
 ?>
 <!DOCTYPE html>
@@ -17,10 +19,11 @@
 </head>
 <body>
 <form> 
-  
+  <pre>
     <?php
-      inverter($vetorInteiros);
+      inverter($vetorDeStrings);
     ?>
+  </pre>
   
   </form>
 </body>
