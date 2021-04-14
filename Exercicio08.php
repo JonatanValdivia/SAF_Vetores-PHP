@@ -1,11 +1,11 @@
 <?php
 $vetorNotas = $_POST; 
-function calcularMedia(array $vetorNotas){
+function calcularMedia(array $vetor){
   $soma = 0;
-  foreach($vetorNotas as $notas){
+  foreach($vetor as $notas){
     $soma += $notas;  
   }
-  echo $soma/4;
+  echo $soma/count($vetor);
 }
 
 ?>

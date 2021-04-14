@@ -11,7 +11,8 @@ $cidade = [
   6 => "Santana de Parnaíba",
   7 => "Carapicuíba",
   8 => "São Paulo",
-  9 => "Goiana da bretanha",
+  9 => "Goiana da Bretanha",
+  10 => "SeteAlem"
 ];
 
 ?>
@@ -27,7 +28,7 @@ $cidade = [
 <body>
   <form method="POST" action="Exercicio05-B.php">
     <label for="nome">Nome:</label>
-    <input type="text" name="nome" id="nome">
+    <input type="text" name="nome" id="nome" placeholder="Nome">
     <select name="cidades">
       <option value="">SELECIONE UMA CIDADE</option>
       <?php

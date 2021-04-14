@@ -10,7 +10,20 @@
   <input type="submit" name="submit" value="Testar" />
  </form> 
  <?php
- 
+  function ehPrimo(int $numero, $i){
+    for($i - 2; $i <= $numero; $i++){
+      $resto = $numero % $i;
+      if($resto == 0){
+        return "O $numero não é primo.";
+      }else{
+        return "O $numero é primo.";
+      }
+    }
+  }
+
+  echo ehPrimo(108, 2);
+
+ /*
   $n = $_GET['numeroEhPrimo'];
   $divisores = 0;
   
@@ -24,6 +37,7 @@
   } else{    
     echo "É um número primo!";
   }
+  */
   
  ?>
  </body>

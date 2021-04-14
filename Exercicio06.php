@@ -4,11 +4,11 @@ $chaves = 0;
 function receber($vetor){
   foreach ($vetor as $key => $valores){
     $chaves = $key;
-    echo(" ". $chaves);
+    echo($chaves . " - " );
   }
 }
 
-receber($vetor, $chaves);
+receber($vetor);
 
 ?>
 
